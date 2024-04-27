@@ -5,6 +5,11 @@ import {
   IconTools,
   IconCloudUpload,
   IconWorld,
+  IconBrandReact,
+  IconBrandTailwind,
+  IconBrandCloudflare,
+  IconBrandNextjs,
+  IconBrandVercel,
 } from "@tabler/icons-react";
 
 interface FeatureItem {
@@ -69,7 +74,7 @@ export const Features = () => {
             quality outcome.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-20">
           {featuresList.map((feature, i) => (
             <div className="flex items-start gap-3" key={i}>
               <div className="rounded-full bg-zinc-800 text-white p-2 w-12 h-12 flex items-center justify-center">
@@ -85,6 +90,18 @@ export const Features = () => {
               </div>
             </div>
           ))}
+        </div>
+        <div>
+          <h3 className="text-center text-lg text-zinc-500 mb-4">
+            Works with your technologies
+          </h3>
+          <div className="flex justify-center gap-6 md:gap-12 [&>svg]:w-12 [&>svg]:h-12 ">
+            <IconBrandReact strokeWidth={1} />
+            <IconBrandTailwind strokeWidth={1} />
+            <IconBrandCloudflare strokeWidth={1.5} />
+            <IconBrandVercel strokeWidth={2} />
+            <IconBrandNextjs strokeWidth={1.5} />
+          </div>
         </div>
       </div>
     </section>
