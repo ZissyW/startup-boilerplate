@@ -29,7 +29,7 @@ export const Pricing = () => {
                 <Link
                   href="https://github.com/ZissyW/startup-boilerplate"
                   target="_blank"
-                  className="bg-blue-500 h-10 text-base rounded text-white px-6 mb-6"
+                  className="bg-blue-500 inline-flex items-center h-10 text-base rounded text-white px-6 mb-6"
                 >
                   Get boilerplate
                 </Link>

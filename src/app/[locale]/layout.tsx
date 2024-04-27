@@ -4,7 +4,7 @@ import { Inter } from "next/font/google";
 import { getTranslations } from "next-intl/server";
 import { createCanonical } from "~/i18n";
 
-import { Header, LinkItem, SocialLinkItem } from "./components";
+import { Header, LinkItem, SocialLinkItem, Footer } from "./components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +36,14 @@ export default function RootLayout({
     { label: "Pricing", path: "/#pricing" },
     { label: "FAQ", path: "/#faq" },
   ];
+
+  const footerLinks: LinkItem[] = [
+    { label: "Home", path: "/" },
+    { label: "Features", path: "/#features" },
+    { label: "Pricing", path: "/#pricing" },
+    { label: "FAQ", path: "/#faq" },
+  ];
+
   const socialLinks: SocialLinkItem[] = [
     { icon: <GithubIcon className="w-6 h-6" />, href: "", title: "Github" },
     {
@@ -48,9 +56,10 @@ export default function RootLayout({
 
   return (
     <html lang={params.locale}>
-      <body className={inter.className}> 
+      <body className={inter.className}>
         <Header links={headerLinks} socialLinks={socialLinks} />
         {children}
+        <Footer links={footerLinks} socialLinks={socialLinks} />
       </body>
     </html>
   );
