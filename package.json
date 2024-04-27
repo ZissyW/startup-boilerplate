@@ -11,6 +11,7 @@
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.10.1",
     "next": "14.2.3",
+    "next-intl": "^3.12.0",
     "react": "^18",
     "react-dom": "^18",
     "zod": "^3.23.4"
