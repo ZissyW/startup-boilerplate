@@ -28,7 +28,7 @@ export const Header = ({
 }: HeaderProps) => {
   return (
     <header
-      className={clsx("sticky top-0 z-30 bg-white", className)}
+      className={clsx("sticky top-0 z-30 bg-white/10 backdrop-blur", className)}
       {...props}
     >
       <div className="w-full max-w-screen-xl mx-auto px-4 h-16 md:h-20 flex items-center">
