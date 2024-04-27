@@ -6,7 +6,7 @@ import HeroSectionImage from "~/assets/images/hero-section-image.webp";
 
 export const HeroSection = () => {
   return (
-    <section className="py-16 md:py-24 overflow-x-clip">
+    <section className="my-16 md:my-24 overflow-x-clip">
       <div
         className={clsx(
           "relative max-w-screen-xl w-full mx-auto px-4",

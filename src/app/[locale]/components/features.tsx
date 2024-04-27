@@ -57,8 +57,8 @@ const featuresList: FeatureItem[] = [
 
 export const Features = () => {
   return (
-    <section className="py-16 md:py-24 overflow-x-clip bg-gradient-to-b from-zinc-50 to-white">
-      <div className="max-w-screen-xl w-full mx-auto px-4 ">
+    <section className="my-16 md:my-24 overflow-x-clip bg-gradient-to-b from-zinc-50 to-white">
+      <div className="max-w-screen-xl w-full mx-auto px-4 pt-16 md:pt-24">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-x-16 mb-8 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             {"I'm your "}
