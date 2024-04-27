@@ -96,11 +96,11 @@ export const Features = () => {
             Works with your technologies
           </h3>
           <div className="flex justify-center gap-6 md:gap-12 [&>svg]:w-12 [&>svg]:h-12 ">
-            <IconBrandReact strokeWidth={1} />
-            <IconBrandTailwind strokeWidth={1} />
-            <IconBrandCloudflare strokeWidth={1.5} />
-            <IconBrandVercel strokeWidth={2} />
-            <IconBrandNextjs strokeWidth={1.5} />
+            <IconBrandReact strokeWidth={1.5} color="#7ed0ef" />
+            <IconBrandNextjs strokeWidth={1.5} color="#000000" />
+            <IconBrandTailwind strokeWidth={1.5} color="#67bcf3" />
+            <IconBrandCloudflare strokeWidth={1.5} color="#e68b42" />
+            <IconBrandVercel strokeWidth={2} color="#000000" />
           </div>
         </div>
       </div>
