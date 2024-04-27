@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
+import { Inter } from "next/font/google";
+
+import { getTranslations } from "next-intl/server";
 import { createCanonical } from "~/i18n";
+
+import { Header } from "./components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,7 +30,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang={params.locale}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
