@@ -11,6 +11,9 @@ dependencies:
   '@t3-oss/env-nextjs':
     specifier: ^0.10.1
     version: 0.10.1(typescript@5.4.5)(zod@3.23.4)
+  '@tabler/icons-react':
+    specifier: ^3.2.0
+    version: 3.2.0(react@18.3.0)
   clsx:
     specifier: ^2.1.1
     version: 2.1.1
@@ -399,6 +402,19 @@ packages:
       '@t3-oss/env-core': 0.10.1(typescript@5.4.5)(zod@3.23.4)
       typescript: 5.4.5
       zod: 3.23.4
+    dev: false
+
+  /@tabler/icons-react@3.2.0(react@18.3.0):
+    resolution: {integrity: sha512-b1mZT1XpZrzvbM+eFe1YbYbxkzgJ18tM4knZKqXh0gnHDZ6XVLIH3TzJZ3HZ7PTkUqZLZ7XcGae3qQVGburlBw==}
+    peerDependencies:
+      react: '>= 16'
+    dependencies:
+      '@tabler/icons': 3.2.0
+      react: 18.3.0
+    dev: false
+
+  /@tabler/icons@3.2.0:
+    resolution: {integrity: sha512-h8GQ2rtxgiSjltrVz4vcopAxTPSpUSUi5nBfJ09H3Bk4fJk6wZ/dVUjzhv/BHfDwGTkAxZBiYe/Q/T95cPeg5Q==}
     dev: false
 
   /@tanstack/react-virtual@3.4.0(react-dom@18.3.0)(react@18.3.0):

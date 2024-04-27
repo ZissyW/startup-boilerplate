@@ -43,7 +43,7 @@ export const MobileHeader = ({
           </div>
         )}
       </Popover.Button>
-      <Popover.Overlay className="fixed h-dvh top-0 inset-x-0 bg-black/50" />
+      <Popover.Overlay className="fixed h-dvh top-0 inset-x-0 bg-white/70" />
       <Popover.Panel className="fixed inset-x-0 top-0 px-2 py-1">
         {({ close }) => (
           <div className="bg-white rounded-lg p-2 shadow-md">
