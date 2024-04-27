@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { IconCheck } from "@tabler/icons-react";
 
 const contentList = [
@@ -25,8 +26,17 @@ export const Pricing = () => {
               </p>
               <div className="mt-8">
                 <p className="text-3xl font-bold mb-4">Free</p>
-                <button className="bg-blue-500 h-10 text-base rounded text-white px-6 mb-6">Get boilerplate</button>
-                <p className="text-sm text-zinc-500">Includes: Source-Code, Globalization, Responsive Design and all features</p>
+                <Link
+                  href="https://github.com/ZissyW/startup-boilerplate"
+                  target="_blank"
+                  className="bg-blue-500 h-10 text-base rounded text-white px-6 mb-6"
+                >
+                  Get boilerplate
+                </Link>
+                <p className="text-sm text-zinc-500">
+                  Includes: Source-Code, Globalization, Responsive Design and
+                  all features
+                </p>
               </div>
             </div>
 

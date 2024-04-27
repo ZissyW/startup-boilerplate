@@ -1,4 +1,4 @@
-import { HeroSection, Features, Pricing } from "./components";
+import { HeroSection, Features, Pricing, Trusted } from "./components";
 
 export default function Page() {
   return (
@@ -6,6 +6,7 @@ export default function Page() {
       <HeroSection />
       <Features />
       <Pricing />
+      <Trusted />
     </main>
   );
 }

@@ -1,5 +1,5 @@
 import clsx from "clsx";
-
+import { Link } from "~/navigation";
 import Image from "next/image";
 
 import HeroSectionImage from "~/assets/images/hero-section-image.webp";
@@ -29,18 +29,26 @@ export const HeroSection = () => {
               TailwindCSS for launch your startup in days.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center">
-              <a href="https://github.com/ZissyW/startup-boilerplate" target="_blank" className="bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center gap-2 h-12 px-6 rounded cursor-pointer w-full sm:w-auto">
+              <Link
+                href="https://github.com/ZissyW/startup-boilerplate"
+                target="_blank"
+                className="bg-blue-500 hover:bg-blue-600 text-white flex items-center justify-center gap-2 h-12 px-6 rounded cursor-pointer w-full sm:w-auto"
+              >
                 <div className="w-6 h-6">
                   <DownloadIcon />
                 </div>
                 <div>Get Boilerplate</div>
-              </a>
-              <a href="https://github.com/ZissyW/startup-boilerplate" target="_blank" className="border-2 border-solid border-zinc-800 bg-white/50 hover:bg-zinc-100/50 text-zinc-800 flex items-center justify-center gap-2 h-12 px-6 rounded cursor-pointer w-full sm:w-auto">
+              </Link>
+              <Link
+                href="https://github.com/ZissyW/startup-boilerplate"
+                target="_blank"
+                className="border-2 border-solid border-zinc-800 bg-white/50 hover:bg-zinc-100/50 text-zinc-800 flex items-center justify-center gap-2 h-12 px-6 rounded cursor-pointer w-full sm:w-auto"
+              >
                 <div className="w-6 h-6">
                   <GithubIcon />
                 </div>
                 <div>Github Repo</div>
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex-1 min-w-0 hidden md:block">
