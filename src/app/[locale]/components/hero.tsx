@@ -1,10 +1,13 @@
 import clsx from "clsx";
+import { getTranslations } from "next-intl/server";
+
 import { Link } from "~/navigation";
 import Image from "next/image";
 
 import HeroSectionImage from "~/assets/images/hero-section-image.webp";
 
-export const HeroSection = () => {
+export const HeroSection = async () => {
+  const t = await getTranslations("home.hero");
   return (
     <section className="my-16 md:my-24 overflow-x-clip">
       <div
@@ -21,12 +24,10 @@ export const HeroSection = () => {
         <div className="w-full flex items-center z-10 relative">
           <div className="flex-1 min-w-0">
             <h1 className="text-5xl md:text-6xl font-bold mb-4">
-              Marketing website done with NextJS
+              {t("heading")}
             </h1>
             <p className="text-lg md:text-xl text-zinc-700 w-full md:w-5/6 leading-8 mb-8">
-              Startup Boilerplate is a open-source starter template for
-              marketing website & landing pages. Built with NextJS and
-              TailwindCSS for launch your startup in days.
+              {t("paragraph")}
             </p>
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <Link
@@ -37,7 +38,7 @@ export const HeroSection = () => {
                 <div className="w-6 h-6">
                   <DownloadIcon />
                 </div>
-                <div>Get Boilerplate</div>
+                <div>{t("downloadButton")}</div>
               </Link>
               <Link
                 href="https://github.com/ZissyW/startup-boilerplate"
@@ -47,7 +48,7 @@ export const HeroSection = () => {
                 <div className="w-6 h-6">
                   <GithubIcon />
                 </div>
-                <div>Github Repo</div>
+                <div>{t("githubRepo")}</div>
               </Link>
             </div>
           </div>

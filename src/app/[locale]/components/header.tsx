@@ -56,7 +56,7 @@ export const Header = ({
             ))}
           </nav>
           <div className="border-r border-zinc-200 h-4 mx-4" />
-          <div className="flex items-center gap-2 mr-4">
+          <div className="flex items-center gap-4 mr-4">
             {socialLinks?.map((item, i) => (
               <Link key={i} target="_blank" href={item.href} title={item.title}>
                 {item.icon}

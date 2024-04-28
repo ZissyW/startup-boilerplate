@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { Link } from "~/navigation";
 import Image from "next/image";
 import { IconBrandX, IconLink } from "@tabler/icons-react";
@@ -86,18 +87,17 @@ const trustedList: [TrustedItem[], TrustedItem[], TrustedItem[]] = [
   ],
 ];
 
-export const Trusted = () => {
+export const Trusted = async () => {
+  const t = await getTranslations("home");
   return (
-    <section className="my-16 md:my-24 overflow-x-clip white">
+    <section id="trusted" className="my-16 md:my-24 overflow-x-clip white">
       <div className="max-w-screen-xl w-full mx-auto px-4">
         <div className="w-full flex flex-col items-center text-center mb-8 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Trusted by thousands
+            {t("trusted.heading")}
           </h2>
-          <p className="text-lg text-zinc-700 w-full md:w-5/6 leading-8">
-            If you use this landing page template and recommend it on your
-            Twitter, please let me know. <br />I will display your tweet and
-            recommendation here.
+          <p className="text-lg text-zinc-700 w-full md:max-w-screen-md leading-8">
+            {t("trusted.paragraph")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-20">

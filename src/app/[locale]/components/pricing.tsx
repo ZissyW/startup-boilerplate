@@ -1,41 +1,47 @@
+import { getTranslations, getMessages } from "next-intl/server";
 import Link from "next/link";
 import { IconCheck } from "@tabler/icons-react";
 
-const contentList = [
-  "Open-source and free use",
-  "Access to full codebase",
-  "Easy to customize",
-  "Github issue support",
-  "Google Analytics support",
-  "MIT License",
-];
+export const Pricing = async () => {
+  const t = await getTranslations("home");
 
-export const Pricing = () => {
+  const contentList = [
+    t("pricing.features.openSource"),
+    t("pricing.features.access"),
+    t("pricing.features.easyCustomize"),
+    t("pricing.features.support"),
+    t("pricing.features.ga"),
+    t("pricing.features.MIT"),
+  ];
+
   return (
-    <section className="my-16 md:my-24 overflow-x-clip bg-white">
+    <section id="pricing" className="my-16 md:my-24 overflow-x-clip bg-white">
       <div className="max-w-screen-xl w-full mx-auto px-4">
         <div className="p-6 md:p-12 lg:p-16 bg-zinc-900 rounded-lg border border-solid border-zinc-600 shadow-2xl shadow-zinc-600/70 text-zinc-100">
           <h2 className="text-3xl md:text-4xl font-bold md:text-center mb-4 md:mb-16">
-            Start your landing page faster
+            {t("pricing.heading")}
           </h2>
           <div className="w-full flex flex-col md:flex-row gap-8">
             <div className="w-full flex-[2] min-w-0">
-              <h3 className="text-2xl font-medium">Open-Source</h3>
+              <h3 className="text-2xl font-medium">
+                {t("pricing.openSource.title")}
+              </h3>
               <p className="text-base md:text-lg text-zinc-400">
-                Freely clone the boilerplate from the Github responsitory.
+                {t("pricing.openSource.description")}
               </p>
               <div className="mt-8">
-                <p className="text-3xl font-bold mb-4">Free</p>
+                <p className="text-3xl font-bold mb-4">
+                  {t("pricing.openSource.price")}
+                </p>
                 <Link
                   href="https://github.com/ZissyW/startup-boilerplate"
                   target="_blank"
                   className="bg-blue-500 inline-flex items-center h-10 text-base rounded text-white px-6 mb-6"
                 >
-                  Get boilerplate
+                  {t("pricing.openSource.button")}
                 </Link>
                 <p className="text-sm text-zinc-500">
-                  Includes: Source-Code, Globalization, Responsive Design and
-                  all features
+                  {t("pricing.openSource.includes")}
                 </p>
               </div>
             </div>

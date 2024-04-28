@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import {
   IconBrandGithubFilled,
   IconDeviceMobile,
@@ -17,61 +18,62 @@ interface FeatureItem {
   title: string;
   description: string;
 }
-const featuresList: FeatureItem[] = [
-  {
-    title: "Open-source Advantage",
-    icon: <IconBrandGithubFilled size={30} />,
-    description: "Completely free with a wealth of customization options.",
-  },
-  {
-    title: "Responsive Design",
-    icon: <IconDeviceMobile size={30} />,
-    description:
-      "Templates meticulously designed to ensure optimal display on any device.",
-  },
-  {
-    title: "SEO Optimized",
-    icon: <IconGrowth size={30} />,
-    description:
-      "Templates built with search engine optimization in mind to enhance your website's discoverability.",
-  },
-  {
-    title: "Easy Customization",
-    icon: <IconTools size={30} />,
-    description:
-      "Effortlessly change colors, fonts, and layouts without any coding knowledge.",
-  },
-  {
-    title: "One-click Deployment",
-    icon: <IconCloudUpload size={30} />,
-    description:
-      "Tightly integrated with leading web hosting services for instant website publishing.",
-  },
-  {
-    title: "Globalization Support",
-    icon: <IconWorld size={30} />,
-    description:
-      "Supports multiple languages, making your website attractive to a global audience.",
-  },
-];
 
-export const Features = () => {
+export const Features = async () => {
+  const t = await getTranslations("home");
+
+  const featuresList: FeatureItem[] = [
+    {
+      title: t("features.items.openSource.heading"),
+      icon: <IconBrandGithubFilled size={30} />,
+      description: t("features.items.openSource.paragraph"),
+    },
+    {
+      title: t("features.items.responsive.heading"),
+      icon: <IconDeviceMobile size={30} />,
+      description: t("features.items.responsive.paragraph"),
+    },
+    {
+      title: t("features.items.seoOptimized.heading"),
+      icon: <IconGrowth size={30} />,
+      description: t("features.items.seoOptimized.paragraph"),
+    },
+    {
+      title: t("features.items.easyCustomization.heading"),
+      icon: <IconTools size={30} />,
+      description: t("features.items.easyCustomization.paragraph"),
+    },
+    {
+      title: t("features.items.oneClickDeployment.heading"),
+      icon: <IconCloudUpload size={30} />,
+      description: t("features.items.oneClickDeployment.paragraph"),
+    },
+    {
+      title: t("features.items.globalization.heading"),
+      icon: <IconWorld size={30} />,
+      description: t("features.items.globalization.paragraph"),
+    },
+  ];
+
   return (
-    <section className="my-16 md:my-24 overflow-x-clip bg-gradient-to-b from-zinc-50 to-white">
+    <section
+      id="features"
+      className="my-16 md:my-24 overflow-x-clip bg-gradient-to-b from-zinc-50 to-white"
+    >
       <div className="max-w-screen-xl w-full mx-auto px-4 pt-16 md:pt-24">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 items-center gap-x-16 mb-8 md:mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            {"I'm your "}
-            <span className="relative whitespace-nowrap text-blue-500">
-              <SmileyUnderline className="absolute inset-x-0 -bottom-0.5 fill-blue-400/75" />
-              <span className="z-10 relative">all-in-one</span>
-            </span>
-            {" project solution"}
+            {t.rich("features.heading", {
+              underline: (chunk) => (
+                <span className="relative whitespace-nowrap text-blue-500">
+                  <SmileyUnderline className="absolute inset-x-0 -bottom-0.5 fill-blue-400/75" />
+                  <span className="z-10 relative">{chunk}</span>
+                </span>
+              ),
+            })}
           </h2>
           <p className="text-lg text-zinc-700 w-full md:w-5/6 leading-8">
-            Experience the advantage of an all-inclusive project solution, where
-            excellence, speed, and responsiveness converge to ensure the highest
-            quality outcome.
+            {t("features.paragraph")}
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 md:mb-20">
@@ -93,7 +95,7 @@ export const Features = () => {
         </div>
         <div>
           <h3 className="text-center text-lg text-zinc-500 mb-4">
-            Works with your technologies
+            {t("features.techStack")}
           </h3>
           <div className="flex justify-center gap-6 md:gap-12 [&>svg]:w-12 [&>svg]:h-12 ">
             <IconBrandReact strokeWidth={1.5} color="#7ed0ef" />

@@ -10,7 +10,7 @@ export const Footer = ({ links, socialLinks, ...props }: FooterProps) => {
     <footer {...props}>
       <div className="max-w-screen-xl w-full mx-auto px-4 py-12">
         <div className="flex flex-col items-center gap-4">
-          <div className="flex items-center gap-2 mr-4">
+          <div className="flex items-center gap-4 mr-4">
             {socialLinks?.map((item, i) => (
               <Link key={i} target="_blank" href={item.href} title={item.title}>
                 {item.icon}
