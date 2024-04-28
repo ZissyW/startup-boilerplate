@@ -8,6 +8,7 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(["development", "production"]).default("development"),
+    SITE_URL: z.string(),
     GA_TRACKING_ID: z.string().optional(),
   },
 
@@ -23,6 +24,7 @@ export const env = createEnv({
    */
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    SITE_URL: process.env.SITE_URL,
     GA_TRACKING_ID: process.env.GA_TRACKING_ID,
   },
   /**
