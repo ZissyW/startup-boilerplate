@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import "./globals.css";
+
+import { GA } from "~/components";
+import { env } from "~/env.mjs";
+
+import "~/app/globals.css";
 
 export const metadata: Metadata = {
   icons: "/logo.svg",
@@ -8,7 +12,10 @@ export const metadata: Metadata = {
 export default function RootLayout(props: Readonly<React.PropsWithChildren>) {
   return (
     <html>
-      <body>{props.children}</body>
+      <body>
+        {env.GA_TRACKING_ID && <GA id={env.GA_TRACKING_ID} />}
+        {props.children}
+      </body>
     </html>
   );
 }
