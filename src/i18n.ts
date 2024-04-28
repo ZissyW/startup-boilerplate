@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getRequestConfig, getLocale } from "next-intl/server";
 import { type AbstractIntlMessages } from "next-intl";
 
-export const locales = ["en", "de"];
+export const locales = ["en", "de", "fr", "zh", "ja", "es"];
 export const defaultLocale = "en";
 
 export const createCanonical = async (path?: string) => {
