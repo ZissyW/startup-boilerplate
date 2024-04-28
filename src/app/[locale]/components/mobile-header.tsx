@@ -4,7 +4,8 @@ import clsx from "clsx";
 import { Logo } from "~/components";
 import { Link } from "~/navigation";
 
-import { Popover, Transition } from "@headlessui/react";
+import { Popover } from "@headlessui/react";
+import { IconMenu2, IconX } from "@tabler/icons-react";
 
 import { LangSwitch } from "./lang-switch";
 
@@ -28,7 +29,6 @@ export const MobileHeader = ({
   className,
   links,
   socialLinks,
-  ...props
 }: HeaderProps) => {
   return (
     <Popover className="relative md:hidden">
@@ -36,9 +36,9 @@ export const MobileHeader = ({
         {({ open }) => (
           <div className={clsx(className)}>
             {open ? (
-              <CloseIcon className="w-9 h-9" />
+              <IconX strokeWidth={1.2} size={36} />
             ) : (
-              <MenuIcon className="w-9 h-9" />
+              <IconMenu2 strokeWidth={1.2} size={36} />
             )}
           </div>
         )}
@@ -59,7 +59,7 @@ export const MobileHeader = ({
                   NextJS Startup Template
                 </div>
               </div>
-              <CloseIcon className="w-9 h-9" onClick={() => close()} />
+              <IconX strokeWidth={1.2} size={36} onClick={() => close()} />
             </div>
 
             <nav
@@ -98,27 +98,3 @@ export const MobileHeader = ({
     </Popover>
   );
 };
-
-type IconProps = React.ComponentProps<"div">;
-
-const MenuIcon = (props: IconProps) => (
-  <div {...props}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="M4 17.27v-1h16v1zm0-4.77v-1h16v1zm0-4.77v-1h16v1z"
-      ></path>
-    </svg>
-  </div>
-);
-
-const CloseIcon = (props: IconProps) => (
-  <div {...props}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="m6.4 18.308l-.708-.708l5.6-5.6l-5.6-5.6l.708-.708l5.6 5.6l5.6-5.6l.708.708l-5.6 5.6l5.6 5.6l-.708.708l-5.6-5.6z"
-      ></path>
-    </svg>
-  </div>
-);

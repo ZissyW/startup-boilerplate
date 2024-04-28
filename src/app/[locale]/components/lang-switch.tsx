@@ -3,6 +3,7 @@ import { useLocale } from "next-intl";
 
 import { Fragment } from "react";
 import { Menu } from "@headlessui/react";
+import { IconChevronRight } from "@tabler/icons-react";
 import { Link, usePathname } from "~/navigation";
 
 export const LangSwitch = () => {
@@ -24,8 +25,10 @@ export const LangSwitch = () => {
                 <div className="flex-1 min-w-0 text-sm">
                   {currentLanguages?.name ?? ""}
                 </div>
-                <ChevronIcon
-                  className="w-6 h-6 data-[open=true]:rotate-90 transition-transform"
+                <IconChevronRight
+                  size={24}
+                  strokeWidth={1.2}
+                  className="data-[open=true]:rotate-90 transition-transform"
                   data-open={open}
                 />
               </>
@@ -68,15 +71,3 @@ const languages = [
   { lang: "ja", name: "🇯🇵 日本語" },
   { lang: "es", name: "🇪🇸 Español" },
 ];
-
-type IconProps = React.ComponentProps<"div">;
-const ChevronIcon = (props: IconProps) => (
-  <div {...props}>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path
-        fill="currentColor"
-        d="m13.292 12l-4.6-4.6l.708-.708L14.708 12L9.4 17.308l-.708-.708z"
-      />
-    </svg>
-  </div>
-);
