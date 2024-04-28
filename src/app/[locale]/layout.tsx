@@ -10,6 +10,8 @@ import { Header, LinkItem, SocialLinkItem, Footer } from "./components";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const runtime = "edge";
+
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations("home");
   const canonical = await createCanonical();
