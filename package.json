@@ -5,10 +5,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cloudflare": "npx @cloudflare/next-on-pages",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@cloudflare/next-on-pages": "^1.11.1",
     "@headlessui/react": "^1.7.19",
     "@t3-oss/env-nextjs": "^0.10.1",
     "@tabler/icons-react": "^3.2.0",
