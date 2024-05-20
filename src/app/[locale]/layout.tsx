@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import { getTranslations } from "next-intl/server";
-import { createCanonical } from "~/i18n";
+import { createCanonical, createLanguages } from "~/i18n";
 
 import { IconBrandX, IconBrandGithub } from "@tabler/icons-react";
 
@@ -15,12 +15,14 @@ export const runtime = "edge";
 export const generateMetadata = async (): Promise<Metadata> => {
   const t = await getTranslations("home");
   const canonical = await createCanonical();
+  const languages = createLanguages();
 
   return {
     title: t("title"),
     description: t("description"),
     alternates: {
       canonical,
+      languages,
     },
   };
 };
